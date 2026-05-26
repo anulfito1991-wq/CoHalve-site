@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoHalve — Support</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal: #14B8A6; --teal2: #0D9488;
+    --cream: #FDFAF5; --stone: #EDE9DF;
+    --text: #1C1917; --muted: #78716C;
+  }
+  body {
+    background: var(--cream); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6; min-height: 100vh; padding-bottom: 80px;
+  }
+  nav {
+    background: rgba(253,250,245,0.92); backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    padding: 0 24px; height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 800; font-size: 17px; color: var(--text); text-decoration: none;
+  }
+  .logo-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--teal), var(--teal2));
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+  nav a.back { font-size: 14px; color: var(--teal); text-decoration: none; }
+  .hero { max-width: 720px; margin: 0 auto; padding: 56px 24px 32px; }
+  .tag {
+    display: inline-block;
+    background: rgba(20,184,166,.10); border: 1px solid rgba(20,184,166,.25);
+    color: var(--teal2); font-size: 12px; font-weight: 700;
+    padding: 4px 12px; border-radius: 99px; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 12px; }
+  .hero p { font-size: 16px; color: var(--muted); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: linear-gradient(135deg, var(--teal), var(--teal2));
+    border-radius: 20px; padding: 28px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .contact-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .contact-card p { font-size: 14px; color: rgba(255,255,255,0.8); }
+  .contact-btn {
+    background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.35);
+    color: #fff; font-size: 14px; font-weight: 600;
+    padding: 10px 20px; border-radius: 12px; text-decoration: none;
+    white-space: nowrap; transition: background .15s;
+  }
+  .contact-btn:hover { background: rgba(255,255,255,0.3); }
+
+  /* ── FAQ ── */
+  .faq-section-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 16px;
+  }
+  .faq-item {
+    border: 1px solid var(--stone); border-radius: 14px;
+    margin-bottom: 8px; overflow: hidden;
+    background: #fff;
+  }
+  .faq-q {
+    width: 100%; text-align: left;
+    padding: 18px 20px; background: none; border: none;
+    font-size: 15px; font-weight: 600; color: var(--text);
+    cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+    gap: 12px;
+    font-family: inherit;
+  }
+  .faq-q:hover { background: var(--stone); }
+  .faq-arrow { font-size: 18px; color: var(--muted); transition: transform .2s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a {
+    display: none; padding: 0 20px 18px;
+    font-size: 14px; color: #44403C; line-height: 1.65;
+  }
+  .faq-item.open .faq-a { display: block; }
+  .faq-a a { color: var(--teal); }
+  .faq-a code {
+    background: var(--stone); padding: 2px 6px; border-radius: 4px;
+    font-size: 13px;
+  }
+
+  h2 { font-size: 20px; font-weight: 800; margin: 40px 0 16px; letter-spacing: -0.3px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">
+    <div class="logo-icon">⚖️</div>
+    CoHalve
+  </a>
+  <a class="back" href="index.html">← Back</a>
+</nav>
+
+<div class="hero">
+  <div class="tag">Support</div>
+  <h1>We're here to help.</h1>
+  <p>Find answers below, or reach out directly — we respond within 1 business day.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- Contact card -->
+  <div class="contact-card">
+    <div>
+      <h3>Email Support</h3>
+      <p>Questions, feedback, or something not working? Send us a note.</p>
+    </div>
+    <a class="contact-btn" href="mailto:support@cohalve.app">support@cohalve.app</a>
+  </div>
+
+  <!-- ── Getting Started ── -->
+  <div class="faq-section-label">Getting Started</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      Do I need to create an account?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      No account needed. CoHalve works entirely on your device — just open the app and start logging expenses. No sign-up, no email, no password.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I set up my co-parent's name and the split percentage?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Go to <strong>Settings</strong> (bottom tab). Under "Your Profile," enter your name. Under "Co-Parent," enter your co-parent's name. Under "Default Split," drag the slider to your agreed split. These defaults apply to every new expense you create.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I add a child to track expenses for?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      In <strong>Settings → Children</strong>, tap "Add child" and type their name. You can add as many children as needed. When logging an expense, you'll be able to tag it to a specific child.
+    </div>
+  </div>
+
+  <!-- ── Expenses ── -->
+  <h2>Expenses</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I log an expense?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Tap the <strong>+ button</strong> on the Expenses tab. Fill in the amount, category, date, who paid, and (optionally) a title, child, notes, and receipt photo. Tap Save.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I request reimbursement?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      On the Expenses tab, swipe right on the expense and tap <strong>Request</strong>. Or open the expense detail and tap <strong>Request Reimbursement</strong>. The expense status will change to "Pending" and CoHalve will remind you in 3 days if it hasn't been settled.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I mark an expense as paid?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Open the expense and tap <strong>Mark as Paid</strong>. The balance will update automatically. You can also decline a reimbursement request and enter a reason.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      Can I delete an expense?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Yes — swipe left on an expense and tap <strong>Delete</strong>, or open it and use the delete option. <strong>Exception:</strong> locked entries cannot be deleted. Locking is designed to prevent edits after both parties have acknowledged an expense.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      What does "Lock Entry" do?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Locking an expense makes it permanent — it can no longer be edited or deleted. This creates a tamper-proof record, useful for documentation and court reporting. In the full co-parent sync version, locking happens automatically when your co-parent views the entry.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How does receipt scanning work?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      When adding an expense, tap the camera icon. CoHalve uses Apple's Vision framework to read the receipt amount directly on your device — nothing is sent to a server. The amount pre-fills the form. You can adjust it if needed.
+    </div>
+  </div>
+
+  <!-- ── Reports ── -->
+  <h2>Reports &amp; Exports</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I export a PDF report?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Go to the <strong>Reports tab</strong> and select a date range. Tap <strong>Export PDF</strong>. The report is generated entirely on your device and opens iOS Share Sheet — email it, AirDrop it, save to Files, or print it. Reports include all expenses, dates, splits, amounts, and reimbursement status.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      Are the PDF reports accepted in family court?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      CoHalve generates clean, itemized reports with dates, categories, amounts, splits, and status. Many attorneys use them to support expense claims. Always consult your attorney about what documentation your specific court requires.
+    </div>
+  </div>
+
+  <!-- ── Premium ── -->
+  <h2>Premium &amp; Subscriptions</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      What's included in the free tier?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      The free tier lets you log up to <strong>10 expenses</strong>, view the running balance, request reimbursements, and lock entries. PDF export, receipt scanning, and the co-parent invite are Premium features.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      Does one subscription cover both parents?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Yes. CoHalve Premium is Family Shareable via Apple's Family Sharing feature. One subscription covers everyone in your Family Sharing group — your co-parent included.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I cancel my subscription?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Subscriptions are managed through Apple. On your iPhone: <strong>Settings → [Your name] → Subscriptions → CoHalve Premium → Cancel</strong>. You keep Premium access until the end of your current billing period.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      I upgraded on one device — how do I restore on another?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Open CoHalve, go to <strong>Settings → Upgrade to Premium</strong>, and tap <strong>Restore Purchase</strong> at the bottom of the paywall. Make sure you're signed into the same Apple ID that made the original purchase.
+    </div>
+  </div>
+
+  <!-- ── Data & Privacy ── -->
+  <h2>Data &amp; Privacy</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      Where is my data stored?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      All your data lives on your device in the app's private storage container. CoHalve has no servers, no cloud sync, and no account system. See our <a href="privacy.html">Privacy Policy</a> for full details.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      How do I delete all my data?
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Delete the CoHalve app from your iPhone. All data stored in the app container is permanently removed. There's no server-side data to request deletion of.
+    </div>
+  </div>
+
+  <!-- ── Troubleshooting ── -->
+  <h2>Troubleshooting</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      The app isn't showing my expenses after reinstalling.
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Since data is stored locally on your device, uninstalling the app deletes your expense history. If you had iCloud Backup enabled, your data may be restored if you restore your iPhone from backup. Unfortunately we cannot recover data from a deleted install without a backup.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      Receipt scanning isn't reading my receipt correctly.
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Try these steps: (1) Make sure the receipt is flat and well-lit with no shadows. (2) Hold the camera steady and ensure the total is clearly visible. (3) If the amount is still wrong, you can manually edit it after scanning. If the issue persists, email us at <a href="mailto:support@cohalve.app">support@cohalve.app</a> with a description.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      Notifications aren't arriving.
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-a">
+      Check that notifications are enabled: <strong>iPhone Settings → CoHalve → Notifications → Allow Notifications</strong>. CoHalve sends a weekly balance digest on Sundays and a nudge 3 days after a reimbursement request goes unanswered.
+    </div>
+  </div>
+
+  <!-- Bottom contact -->
+  <div style="margin-top:48px; padding:28px; background:#fff; border:1px solid var(--stone); border-radius:16px; text-align:center;">
+    <p style="font-size:16px; font-weight:600; margin-bottom:8px;">Still need help?</p>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">Email us and we'll get back to you within 1 business day.</p>
+    <a href="mailto:support@cohalve.app" style="display:inline-block; background:var(--teal); color:#fff; font-size:15px; font-weight:600; padding:12px 28px; border-radius:12px; text-decoration:none;">
+      support@cohalve.app
+    </a>
+  </div>
+
+</div>
+
+<script>
+function toggle(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
