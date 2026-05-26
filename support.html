@@ -95,6 +95,36 @@
   }
 
   h2 { font-size: 20px; font-weight: 800; margin: 40px 0 16px; letter-spacing: -0.3px; }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --teal:  #2DD4BF;
+      --teal2: #14B8A6;
+      --cream: #1C1917;
+      --stone: #302B28;
+      --text:  #F5F0E8;
+      --muted: #A8A29E;
+    }
+    nav {
+      background: rgba(28,25,23,0.92);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .faq-item {
+      background: #262220;
+      border-color: #3C3733;
+    }
+    .faq-q { color: var(--text); }
+    .faq-q:hover { background: #302B28; }
+    .faq-a { color: #D6CFC8; }
+    .contact-card {
+      background: linear-gradient(135deg, var(--teal2), #0A7A70);
+    }
+    div[style*="background:#fff"] {
+      background: #262220 !important;
+      border-color: #3C3733 !important;
+    }
+    h2 { color: var(--text); }
+  }
 </style>
 </head>
 <body>

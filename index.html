@@ -257,6 +257,47 @@
     .nav-links { gap: 12px; }
     .nav-links a { display: none; }
   }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --teal:  #2DD4BF;
+      --teal2: #14B8A6;
+      --cream: #1C1917;
+      --stone: #302B28;
+      --text:  #F5F0E8;
+      --muted: #A8A29E;
+      --green: #4ADE80;
+      --amber: #FCD34D;
+      --white: #262220;
+    }
+    nav {
+      background: rgba(28,25,23,0.92);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .feat-card {
+      background: #262220;
+      border-color: #3C3733;
+    }
+    .price-card {
+      background: #262220;
+      border-color: #3C3733;
+    }
+    .price-card.featured {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(45,212,191,.12);
+    }
+    .free-tier { background: #302B28; }
+    .trust {
+      background: #252220;
+      border-color: rgba(255,255,255,0.06);
+    }
+    .phone { box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06); }
+    .phone-screen { background: #1C1917; }
+    .mock-header { color: var(--text); }
+    .mock-row { background: #302B28; }
+    .section p.lead { color: var(--muted); }
+    footer { background: #0C0A09; }
+  }
 </style>
 </head>
 <body>

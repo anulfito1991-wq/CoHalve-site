@@ -71,6 +71,32 @@
     border-top: 1px solid var(--stone);
     font-size: 13px; color: var(--muted);
   }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --teal:  #2DD4BF;
+      --teal2: #14B8A6;
+      --cream: #1C1917;
+      --stone: #302B28;
+      --text:  #F5F0E8;
+      --muted: #A8A29E;
+    }
+    nav {
+      background: rgba(28,25,23,0.92);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .wrap {
+      background: #262220;
+      border-color: #3C3733;
+    }
+    .highlight {
+      background: rgba(45,212,191,0.08);
+      border-left-color: var(--teal);
+    }
+    .highlight p { color: var(--teal2); }
+    p, li { color: #D6CFC8; }
+    h2 { color: var(--text); border-top-color: #3C3733; }
+  }
 </style>
 </head>
 <body>
